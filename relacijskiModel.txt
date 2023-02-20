@@ -1,0 +1,3 @@
+Recept(ID, Ime, Opis, URL)
+Kategorija(ID, Ime)
+Namirnica(ID, Ime)
