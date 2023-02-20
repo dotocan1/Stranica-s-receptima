@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const recipeSchema = new mongoose.Schema({
-  name: String
+  name: String,
+  category_ID: String,
 });
 
 // Create a virtual property `url`
@@ -11,7 +12,7 @@ recipeSchema.virtual('url').get(function () {
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
-const kruh = new Recipe({ name: 'Kruh' });
+// const kruh = new Recipe({ name: 'Kruh' });
 // console.log(kruh.name);
 
 // saving models

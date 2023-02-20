@@ -13,10 +13,11 @@ var app = express();
 
 // config env
 require('dotenv').config()
-// console.log(process.env.SECRET_KEY) // remove this after you've confirmed it is working
+//console.log(process.env.URL_MONGO) // remove this after you've confirmed it is working
 
 // config mongoose
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', false); // prepare for mongoose 7
 
 main().catch(err => console.log(err));
 
