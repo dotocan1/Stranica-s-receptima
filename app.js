@@ -9,8 +9,20 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// config env
 require('dotenv').config()
 // console.log(process.env.SECRET_KEY) // remove this after you've confirmed it is working
+
+// config mongoose
+const mongoose = require('mongoose');
+
+main().catch(err => console.log(err));
+
+async function main() {
+  await mongoose.connect(process.env.URL_MONGO);
+  
+  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
