@@ -15,7 +15,5 @@ exports.createGroceryGet = (req, res, next) => {
 
 // this sends grocery data to the database
 exports.createGroceryPost = (req, res, next) => {
-    const grocery = new Grocery(){
-        
-    }
+    const grocery = new Grocery();
 }
