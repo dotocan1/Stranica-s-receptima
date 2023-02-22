@@ -5,13 +5,16 @@ const Grocery = require('../models/groceryModel');
 
 // this lists all groceries
 exports.listAllGroceries = async (req, res, next) => {
-
-    // TODO: code that lists all the groceries
-    // and then renders the page
-    // find all documents
-    const groceryArray = await Grocery.find()
-        .sort([["name", "ascending"]]);
-    res.render('listGroceries', {groceryArray: groceryArray});
+    // and then renders the page 
+    try {
+        // find all documents
+        const groceryArray = await Grocery.find()
+            .sort([["name", "ascending"]]);
+        res.render('listGroceries', { groceryArray: groceryArray });
+    }
+    catch (error) {
+        next(error);
+    }
 }
 
 // this renders the create a grocery page
