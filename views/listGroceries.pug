@@ -3,4 +3,10 @@ extends layout
 block content
   h2= "Na ovoj stranici cu implementirati listu namirnica"
 
+  ul
+    each grocery in groceryArray
+      li
+        a(href = grocery.url) #{grocery.name}
+    else
+      li There are no groceries.
   
