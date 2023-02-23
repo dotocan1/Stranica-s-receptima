@@ -12,10 +12,4 @@ recipeSchema.virtual('url').get(function () {
 
 const Recipe = mongoose.model('Recipe', recipeSchema);
 
-// const kruh = new Recipe({ name: 'Kruh' });
-// console.log(kruh.name);
-
-// saving models
-// await kruh.save();
-
 module.exports = Recipe;

@@ -1,4 +1,12 @@
-extends layout
+extends ../layout.pug
 
 block content
   h2= "Na ovoj stranici cu implementirati listu recepata"
+
+  ul
+    each recipe in recipeArray
+      li
+        a(href = recipe.url) #{recipe.name}
+    else
+      li There are no groceries.
+  

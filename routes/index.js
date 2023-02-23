@@ -35,5 +35,7 @@ router.get('/category', categoryController.listAllCategories);
 
 // RECIPE ROUTES
 
+/* GET grocery page with all groceries listed */
+router.get('/recipe', recipeController.listAllRecipes);
 
 module.exports = router;
