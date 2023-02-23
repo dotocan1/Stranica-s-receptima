@@ -22,6 +22,12 @@ exports.createRecipeGet = (req, res, next) => {
     res.render("createRecipeGet", { arr: arr });
 }
 
+// this renders a certain recipe page
+exports.createCertainRecipeGet = (req, res, next) => {
+    // console.log(req.params.recipeId);
+    res.render('../views/recipe/createCertainRecipeGet', {recipeId: req.params.recipeId});
+}
+
 // this sends recipe data to the database
 exports.createRecipePost = (req, res, next) => {
     const recipe = new Recipe();

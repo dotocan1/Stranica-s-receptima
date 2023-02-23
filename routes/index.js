@@ -18,6 +18,9 @@ router.get('/grocery', groceryController.listAllGroceries);
 // GET page for creating groceries
 router.get('/grocery/create', groceryController.createGroceryGet);
 
+// GET page for reading a certain grocery
+router.get('/grocery/:groceryId', groceryController.createCertainGroceryGet);
+
 // POST method for sending data to database
 
 
@@ -29,13 +32,20 @@ router.get('/category', categoryController.listAllCategories);
 // GET page for creating groceries
 router.get('/category/create', categoryController.createCategoryGet);
 
+// GET page for reading a certain category
+router.get('/category/:categoryId', categoryController.createCertainCategoryGet);
+
 // POST method for sending data to database
-
-
 
 // RECIPE ROUTES
 
-/* GET grocery page with all groceries listed */
+/* GET recipe page with all recipes listed */
 router.get('/recipe', recipeController.listAllRecipes);
+
+// GET page for creating recipes
+router.get('/recipe/create', recipeController.createRecipeGet);
+
+// GET page for reading a certain recipe
+router.get('/recipe/:recipeId', recipeController.createCertainRecipeGet);
 
 module.exports = router;

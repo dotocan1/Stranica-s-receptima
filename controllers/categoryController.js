@@ -27,3 +27,9 @@ exports.createCategoryGet = (req, res, next) => {
 exports.createCategoryPost = (req, res, next) => {
     const category = new Category();
 }
+
+// this renders a certain category page
+exports.createCertainCategoryGet = (req, res, next) => {
+    // console.log(req.params.categoryId);
+    res.render('../views/category/createCertainCategoryGet', {categoryId: req.params.categoryId});
+}
