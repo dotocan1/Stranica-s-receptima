@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block content
+  h2= "Na ovoj stranici cu implementirati listu kategorija"
+
+  ul
+    each category in categoryArray
+      li
+        a(href = category.url) #{category.name}
+    else
+      li There are no categories.
+  

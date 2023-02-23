@@ -11,10 +11,4 @@ categorySchema.virtual('url').get(function () {
 
 const Category = mongoose.model('Category', categorySchema);
 
-const kruh = new Category({ name: 'Kruh' });
-// console.log(kruh.name);
-
-// saving models
-// await kruh.save();
-
 module.exports = Category;

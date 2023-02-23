@@ -10,7 +10,7 @@ exports.listAllGroceries = async (req, res, next) => {
         // find all documents
         const groceryArray = await Grocery.find()
             .sort([["name", "ascending"]]);
-        res.render('listGroceries', { groceryArray: groceryArray });
+        res.render('../views/grocery/listGroceries', { groceryArray: groceryArray });
     }
     catch (error) {
         next(error);

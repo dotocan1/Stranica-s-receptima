@@ -9,8 +9,6 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-
-
 // config env
 require('dotenv').config()
 //console.log(process.env.URL_MONGO) // remove this after you've confirmed it is working
