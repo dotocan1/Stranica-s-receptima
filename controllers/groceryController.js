@@ -19,7 +19,7 @@ exports.listAllGroceries = async (req, res, next) => {
 
 // this renders the create a grocery page
 exports.createGroceryGet = (req, res, next) => {
-    res.render("createGroceryGet", { arr: arr });
+    res.render("../views/grocery/createGroceryGet.pug");
 }
 
 // this sends grocery data to the database

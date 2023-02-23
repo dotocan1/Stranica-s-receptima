@@ -20,7 +20,7 @@ exports.listAllCategories = async (req, res, next) => {
 
 // this renders the create a category page
 exports.createCategoryGet = (req, res, next) => {
-    res.render("createCategoryGet", { arr: arr });
+    res.render("../views/category/createCategoryGet.pug");
 }
 
 // this sends category data to the database

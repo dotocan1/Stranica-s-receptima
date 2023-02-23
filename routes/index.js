@@ -27,7 +27,7 @@ router.get('/grocery/create', groceryController.createGroceryGet);
 router.get('/category', categoryController.listAllCategories);
 
 // GET page for creating groceries
-// router.get('/category/create', categoryController.createGroceryGet);
+router.get('/category/create', categoryController.createCategoryGet);
 
 // POST method for sending data to database
 
