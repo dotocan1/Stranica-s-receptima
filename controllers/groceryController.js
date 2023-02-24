@@ -24,26 +24,21 @@ exports.createGroceryGet = (req, res, next) => {
 
 // this renders a certain grocery page
 exports.createCertainGroceryGet = (req, res, next) => {
-    // console.log(req.params.groceryId);
     res.render('../views/grocery/createCertainGroceryGet', { groceryId: req.params.groceryId });
 }
 
 // this sends grocery data to the database
 exports.createGroceryPost = (req, res, next) => {
-    // console.log("Ovo je ime namirnice: " + req.body.name);
-
-    // send data to database here
+    // create new Grocery model
     const grocery = new Grocery(
         { name: req.body.name }
     );
 
+    // send data to database here
     grocery.save(function (err) {
         if (err) return handleError(err);
         // saved!
         // redirect to grocery page
         res.redirect('/grocery');
     });
-
-
-
 }
