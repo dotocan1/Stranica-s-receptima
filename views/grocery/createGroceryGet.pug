@@ -2,3 +2,9 @@ extends ../layout.pug
 
 block content
   h2= "Na ovoj stranici cu implementirati unos namirnice"
+
+  form(method="POST" action='')
+    div.form-group
+      label(for='name') Name:
+      input#name.form-control(name="name", type="text", required='true', placeholder='Name of the grocery')
+    button.button-class(type='submit') Submit 

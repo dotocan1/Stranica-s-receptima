@@ -30,5 +30,12 @@ exports.createCertainGroceryGet = (req, res, next) => {
 
 // this sends grocery data to the database
 exports.createGroceryPost = (req, res, next) => {
-    const grocery = new Grocery();
+    // console.log("Ovo je ime namirnice: " + req.body.name);
+    
+    // send data to database here
+        
+    // redirect to grocery page
+    res.redirect('/grocery');
+
+
 }

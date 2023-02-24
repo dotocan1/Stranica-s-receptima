@@ -9,4 +9,5 @@ block content
         a(href = grocery.url) #{grocery.name}
     else
       li There are no groceries.
-  
+  form(action="/grocery/create")
+    input(type="submit" value="Add a grocery")

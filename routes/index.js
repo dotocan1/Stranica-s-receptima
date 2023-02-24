@@ -22,7 +22,7 @@ router.get('/grocery/create', groceryController.createGroceryGet);
 router.get('/grocery/:groceryId', groceryController.createCertainGroceryGet);
 
 // POST method for sending data to database
-
+router.post('/grocery/create', groceryController.createGroceryPost);
 
 // CATEGORY ROUTES
 
