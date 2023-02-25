@@ -25,10 +25,10 @@ router.get('/grocery/:groceryId', groceryController.createCertainGroceryGet);
 router.post('/grocery/create', groceryController.createGroceryPost);
 
 // POST method for deleting a grocery
-router.post('/grocery/delete', groceryController.deleteGrocery);
+router.post('/grocery/:groceryId/delete', groceryController.deleteGrocery);
 
 // POST method for updating a grocery
-router.post('/grocery/update', groceryController.updateGrocery);
+router.post('/grocery/:groceryId/update', groceryController.updateGrocery);
 
 // CATEGORY ROUTES
 
