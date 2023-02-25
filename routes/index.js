@@ -21,11 +21,14 @@ router.get('/grocery/create', groceryController.createGroceryGet);
 // GET page for reading a certain grocery
 router.get('/grocery/:groceryId', groceryController.createCertainGroceryGet);
 
-// POST method for sending data to database
+// POST method for sending data
 router.post('/grocery/create', groceryController.createGroceryPost);
 
-// POST method for deleting a document from a database
-router.post('/grocery/:groceryId', groceryController.deleteAGrocery);
+// POST method for deleting a grocery
+router.post('/grocery/delete', groceryController.deleteGrocery);
+
+// POST method for updating a grocery
+router.post('/grocery/update', groceryController.updateGrocery);
 
 // CATEGORY ROUTES
 

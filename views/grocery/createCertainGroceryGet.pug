@@ -6,5 +6,7 @@ block content
   p
     |Ovo je id: #{groceryId}
 
-  form(action='' method='post')
+  form(action='/grocery/update' method='post')
+    input(type="submit" value="Update")
+  form(action='/grocery/delete' method='post')
     input(type="submit" value="Delete")

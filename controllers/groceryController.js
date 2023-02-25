@@ -3,11 +3,6 @@ var router = express.Router();
 const mongoose = require('mongoose');
 const Grocery = require('../models/groceryModel');
 
-// async function findGrocery () {
-//     Grocery.findOne({ _id: groceryID }, function (err, cb) {
-//     });
-// }
-
 // this lists all groceries
 exports.listAllGroceries = async (req, res, next) => {
     // and then renders the page 
@@ -48,9 +43,9 @@ exports.createGroceryPost = (req, res, next) => {
     });
 }
 
-exports.deleteAGrocery = async (req, res, next) => {
+exports.deleteGrocery = async (req, res, next) => {
     const groceryID = req.params.groceryId;
-    console.log(groceryID);
+    console.log('Ovo je id: ' + req.params.groceryId);
 
     async function deleteGrocery () {
         await Grocery.deleteOne({ _id: groceryID }); // returns {deletedCount: 1}
@@ -64,5 +59,12 @@ exports.deleteAGrocery = async (req, res, next) => {
     }
     // redirect to grocery page
     res.redirect('/grocery');
+}
 
+exports.updateGrocery = async (req, res, next) => {
+    
+    const query = { _id: req.params.groceryId };
+    Grocery.findOneAndUpdate(query, { name: 'jason bourne' }, options, () => {
+        res.redirect('/grocery');
+    })
 }
