@@ -64,7 +64,7 @@ exports.deleteGrocery = async (req, res, next) => {
 exports.updateGrocery = async (req, res, next) => {
 
     const filter = { _id: req.params.groceryId };
-    const update = { name: 'sss' };
+    const update = { name: req.body.name };
 
     // `doc` is the document _after_ `update` was applied because of
     // `new: true`

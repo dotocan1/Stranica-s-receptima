@@ -6,7 +6,11 @@ block content
   p
     |Ovo je id: #{groceryId}
 
+  
+
   form(action=`${groceryId}/update` method='post')
+    label(for='name') Name:
+    input(name="name", type="text", required='true', placeholder='New name of the grocery')
     input(type="submit" value="Update")
   form(action=`${groceryId}/delete` method='post')
     input(type="submit" value="Delete")
