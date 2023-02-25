@@ -63,7 +63,10 @@ exports.deleteGrocery = async (req, res, next) => {
 
 exports.updateGrocery = async (req, res, next) => {
 
+    // finds document
     const filter = { _id: req.params.groceryId };
+
+    // update data
     const update = { name: req.body.name };
 
     // `doc` is the document _after_ `update` was applied because of
@@ -72,6 +75,7 @@ exports.updateGrocery = async (req, res, next) => {
         new: true
     });
 
+    // redirect to list of groceries
     res.redirect('/grocery');
 
 
