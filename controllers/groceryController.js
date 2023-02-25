@@ -65,7 +65,4 @@ exports.deleteAGrocery = async (req, res, next) => {
     // redirect to grocery page
     res.redirect('/grocery');
 
-
-
-
 }
