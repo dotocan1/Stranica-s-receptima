@@ -62,9 +62,17 @@ exports.deleteGrocery = async (req, res, next) => {
 }
 
 exports.updateGrocery = async (req, res, next) => {
-    
-    const query = { _id: req.params.groceryId };
-    Grocery.findOneAndUpdate(query, { name: 'jason bourne' }, options, () => {
-        res.redirect('/grocery');
-    })
+
+    const filter = { _id: req.params.groceryId };
+    const update = { name: 'sss' };
+
+    // `doc` is the document _after_ `update` was applied because of
+    // `new: true`
+    let doc = await Grocery.findOneAndUpdate(filter, update, {
+        new: true
+    });
+
+    res.redirect('/grocery');
+
+
 }
