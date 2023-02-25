@@ -24,6 +24,9 @@ router.get('/grocery/:groceryId', groceryController.createCertainGroceryGet);
 // POST method for sending data to database
 router.post('/grocery/create', groceryController.createGroceryPost);
 
+// POST method for deleting a document from a database
+router.post('/grocery/:groceryId', groceryController.deleteAGrocery);
+
 // CATEGORY ROUTES
 
 /* GET grocery page with all groceries listed */

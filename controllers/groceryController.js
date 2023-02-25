@@ -3,6 +3,11 @@ var router = express.Router();
 const mongoose = require('mongoose');
 const Grocery = require('../models/groceryModel');
 
+// async function findGrocery () {
+//     Grocery.findOne({ _id: groceryID }, function (err, cb) {
+//     });
+// }
+
 // this lists all groceries
 exports.listAllGroceries = async (req, res, next) => {
     // and then renders the page 
@@ -41,4 +46,26 @@ exports.createGroceryPost = (req, res, next) => {
         // redirect to grocery page
         res.redirect('/grocery');
     });
+}
+
+exports.deleteAGrocery = async (req, res, next) => {
+    const groceryID = req.params.groceryId;
+    console.log(groceryID);
+
+    async function deleteGrocery () {
+        await Grocery.deleteOne({ _id: groceryID }); // returns {deletedCount: 1}
+    }
+
+    try {
+        await deleteGrocery();
+    }
+    catch (error) {
+        next(error);
+    }
+    // redirect to grocery page
+    res.redirect('/grocery');
+
+
+
+
 }
