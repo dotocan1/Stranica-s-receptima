@@ -1,3 +1,4 @@
-Recept(ID, Ime, Opis, URL)
-Kategorija(ID, Ime)
-Namirnica(ID, Ime)
+Recept(Id, Ime, Opis, Vrsta, _URL)
+Kategorija(Id, Ime, Opis, _URL)
+Namirnica(Id, Ime, Opis, _URL)
+ReceptNamirnica(Id, ReceptId, NamirnicaId)
