@@ -71,12 +71,15 @@ exports.updateGrocery = async (req, res, next) => {
 
     // `doc` is the document _after_ `update` was applied because of
     // `new: true`
-    let doc = await Grocery.findOneAndUpdate(filter, update, {
-        new: true
-    });
+    try {
+        let doc = await Grocery.findOneAndUpdate(filter, update, {
+            new: true
+        });
+    }
+    catch (error) {
+        next(error);
+    }
 
     // redirect to list of groceries
     res.redirect('/grocery');
-
-
 }
