@@ -1,4 +1,8 @@
 const mongoose = require('mongoose');
+const groceryModel = require('./groceryModel');
+const categoryModel = require('./categoryModel');
+
+const Schema = mongoose.Schema;
 
 const recipeSchema = new mongoose.Schema({
   name: String,

@@ -9,4 +9,5 @@ block content
         a(href = recipe.url) #{recipe.name}
     else
       li There are no groceries.
-  
+  form(action="/recipe/create")
+    input(type="submit" value="Add a recipe")

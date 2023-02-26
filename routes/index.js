@@ -49,7 +49,7 @@ router.get('/category/:categoryId', categoryController.createCertainCategoryGet)
 router.get('/recipe', recipeController.listAllRecipes);
 
 // GET page for creating recipes
-router.get('/recipe/create', recipeController.createRecipeGet);
+router.get('/recipe/create', recipeController.createRecipe);
 
 // GET page for reading a certain recipe
 router.get('/recipe/:recipeId', recipeController.createCertainRecipeGet);
