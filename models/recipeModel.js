@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const recipeSchema = new mongoose.Schema({
   name: String,
-  category_ID: String,
+  category: { type: Schema.Types.ObjectId, ref: "Category", required: true },
+  grocery: { type: Schema.Types.ObjectId, ref: "Grocery", required: true }
 });
 
 // Create a virtual property `url`
