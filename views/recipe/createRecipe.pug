@@ -1,6 +1,4 @@
 extends ../layout.pug
-block scripts
-  script(src="/scripts/createRecipeScript.js")
 block content
   h2= "Na ovoj stranici cu implementirati unos namirnice"
   form(method="POST" action='')
@@ -13,3 +11,4 @@ block content
           option(value = grocery.name) #{grocery.name}
     button#btnAddMoreGroceries(type = "button") "Add another grocery"  
     button.button-class(type='submit') Submit 
+  script(src="/scripts/createRecipeScript.js")
