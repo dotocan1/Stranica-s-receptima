@@ -1,14 +1,15 @@
 extends ../layout.pug
-
+block scripts
+  script(src="/scripts/createRecipeScript.js")
 block content
   h2= "Na ovoj stranici cu implementirati unos namirnice"
-
   form(method="POST" action='')
     div
       label(for='name') Recipe name:
       input(name="name", type="text", required='true', placeholder='Name of the recipe')
       label(for='grocery') Grocery:
-      select(name="qGrocery", placeholder='Name of the grocery')
+      select#qGrocery(name="qGrocery", placeholder='Name of the grocery')
         each grocery in groceryArray
-            option(value = grocery.name) #{grocery.name}
+          option(value = grocery.name) #{grocery.name}
+    button#btnAddMoreGroceries(type = "button") "Add another grocery"  
     button.button-class(type='submit') Submit 

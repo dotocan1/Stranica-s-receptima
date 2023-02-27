@@ -22,9 +22,11 @@ exports.listAllRecipes = async (req, res, next) => {
 exports.createRecipe = async (req, res, next) => {
 
     try {
-        // find all documents
+        // find all groceries
         const groceryArray = await Grocery.find()
             .sort([["name", "ascending"]]);
+
+            // render the recipe page
         res.render('../views/recipe/createRecipe', { groceryArray: groceryArray });
     }
     catch (error) {
